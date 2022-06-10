@@ -27,10 +27,9 @@ function App() {
         <Currencies />
       </Route>
 
-      <Route exact path='/price/:symbol'>
-        <Price />
-      </Route>
-      
+      <Route exact path='/price/:symbol' render={(renderProps) => {
+       return <Price {...renderProps} /> //Props spreading 
+      }}/>
     </div>
   );
 }
